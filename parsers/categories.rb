@@ -3,8 +3,11 @@ html = Nokogiri.HTML(content)
 categories = html.css('.CategoriesWithShortcutContainer .id-input-container')
 
 if categories.count > 0
+    
+    # categories.each do |category| # Original
+    categories.each_with_index do |category,i| # 3 Iteration Limiter
+        next if i >= 3                         # 3 Iteration Limiter
 
-    categories.each do |category|
         id = category.at('input')['value']
         cat = category.at_css('.CategoryLabel')&.text.strip 
         pages << {

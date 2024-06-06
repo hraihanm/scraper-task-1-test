@@ -5,8 +5,8 @@ products = html.css('#GridresultsContainerTbl .card-product-container')
 var = page['vars']
 
 products.each_with_index do |product, i|
-    ### 5 Iteration Limiter
-    next if i >= 4
+    ### 3 Iteration Limiter
+    next if i >= 3
 
     name = product.at_css(".card-product-body span.card-product-name").text.strip.gsub(" ", "-")
     url = "https://www.tiendainglesa.com.uy/"+CGI.escape(name)+".producto?"+product['data-id']
