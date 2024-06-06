@@ -1,0 +1,5 @@
+exporter_name: product_json
+exporter_type: json
+collection: products
+write_mode: pretty_array
+start_on_job_done: true
